@@ -1,0 +1,23 @@
+{
+  "name": "ProdAI Supervisor - IA para Fábricas Textiles",
+  "short_name": "ProdAI",
+  "description": "Supervisor de Producción con Inteligencia Artificial para la industria textil colombiana",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#22d3ee",
+  "orientation": "portrait-primary",
+  "lang": "es-CO",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23020617' width='100' height='100' rx='20'/><text x='50' y='65' font-size='50' text-anchor='middle' fill='%2322d3ee'>AI</text></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "screenshots": [],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

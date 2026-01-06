@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Supervisor de Producción con IA para Fábricas Textiles. Optimiza tu SAM y nómina al instante con inteligencia artificial.">
+    <meta name="keywords" content="IA textil, supervisor producción, SAM, eficiencia fábrica, nómina textil, Colombia, industria 4.0">
+    <meta name="author" content="ProdAI Supervisor">
+    <meta name="robots" content="index, follow">
+    <title>Supervisor de Producción IA | Eficiencia Textil 4.0 | Colombia</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://prodai.co/">
+    <meta property="og:title" content="ProdAI Supervisor - IA para Fábricas Textiles">
+    <meta property="og:description" content="Transforma tus archivos de Excel en decisiones de producción instantáneas. Análisis SAM, nómina e incentivos vía Telegram.">
+    <meta property="og:image" content="https://prodai.co/og-image.jpg">
+    <meta property="og:locale" content="es_CO">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ProdAI Supervisor - IA para Fábricas Textiles">
+    <meta name="twitter:description" content="Transforma tus archivos de Excel en decisiones de producción instantáneas.">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#22d3ee">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23020617' width='100' height='100' rx='20'/><text x='50' y='65' font-size='50' text-anchor='middle' fill='%2322d3ee'>AI</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dark-theme">
+    
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Custom Cursor -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+    
+    <!-- Navbar -->
+    <nav class="navbar glass">
+        <div class="container nav-content">
+            <div class="logo">
+                <i data-lucide="bot" class="text-cyan"></i>
+                <span>Prod<span class="text-cyan">AI</span> Supervisor</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#features">Funcionalidades</a>
+                <a href="#use-cases">Casos de Uso</a>
+                <a href="#roi">Rentabilidad</a>
+                <a href="#how-it-works">Despliegue</a>
+                <a href="#contact">Contacto</a>
+            </div>
+            <div class="nav-right">
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
+                <button class="btn btn-primary trigger-modal desktop-only">Solicitar Demo</button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-content glass">
+            <a href="#features" class="mobile-link">Funcionalidades</a>
+            <a href="#use-cases" class="mobile-link">Casos de Uso</a>
+            <a href="#roi" class="mobile-link">Rentabilidad</a>
+            <a href="#how-it-works" class="mobile-link">Despliegue</a>
+            <a href="#contact" class="mobile-link">Contacto</a>
+            <button class="btn btn-primary trigger-modal w-full">Solicitar Demo</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <!-- Aurora Background Effect -->
+        <div class="aurora-bg"></div>
+        
+        <!-- Particle Background -->
+        <canvas id="particleCanvas" class="particle-canvas"></canvas>
+        
+        <div class="container hero-grid">
+            <div class="hero-text fade-in-up parallax-element">
+                <div class="badge-new glow-pulse">
+                    <span class="pulse-dot"></span> Nueva Tecnología Gemini 1.5 Flash
+                </div>
+                <h1>Deja de adivinar.<br>Empieza a <span class="text-gradient">producir.</span></h1>
+                <p class="hero-sub">
+                    Tu fábrica genera datos cada segundo. Tus archivos de Excel los entierran. 
+                    Nuestro Supervisor IA transforma el caos de archivos `.csv` en decisiones rentables vía Telegram.
+                </p>
+                <div class="cta-group">
+                    <button class="btn btn-primary btn-glow trigger-modal">
+                        <i data-lucide="rocket"></i> Iniciar Piloto Gratuito
+                    </button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'})">
+                        <i data-lucide="play-circle"></i> Ver cómo funciona
+                    </button>
+                </div>
+                <p class="micro-copy"><i data-lucide="check-circle" class="icon-tiny"></i> Sin tarjetas de crédito. Cumplimiento Ley 1581 de 2012 (Habeas Data).</p>
+            </div>
+            
+            <div class="hero-visual fade-in-up delay-200">
+                <div class="phone-mockup float-animation glass-extreme">
+                    <div class="screen">
+                        
+                        <div class="app-header">
+                            <i data-lucide="chevron-left"></i>
+                            <div class="contact-info">
+                                <span class="name">Supervisor IA</span>
+                                <span class="status">en línea</span>
+                            </div>
+                            <div class="avatar-bot">AI</div>
+                        </div>
+                        <div class="chat-area" id="chat-demo">
+                            <!-- JS will flush content here -->
+                        </div>
+                        <div class="input-area">
+                            <div class="input-fake">Escribe un mensaje...</div>
+                            <div class="send-btn"><i data-lucide="send"></i></div>
+                        </div>
+                    </div>
+                    <div class="glow-effect"></div>
+                </div>
+                <!-- Floating Cards -->
+                <div class="float-card card-efficiency">
+                    <div class="icon-box green"><i data-lucide="trending-up"></i></div>
+                    <div>
+                        <span class="label">Eficiencia Hoy</span>
+                        <span class="value text-green">98.5%</span>
+                    </div>
+                </div>
+                <div class="float-card card-alert">
+                    <div class="icon-box red"><i data-lucide="alert-triangle"></i></div>
+                    <div>
+                        <span class="label">Cuello de Botella</span>
+                        <span class="value">Línea 4 - Modulo B</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Trusted Tech Stack (Authority Bias) -->
+    <section class="section-tech-stack">
+        <div class="container text-center">
+            <p class="tech-label">INFRAESTRUCTURA SEGURA Y ESCALABLE</p>
+            <div class="tech-logos">
+                <div class="tech-item" title="Inteligencia Artificial Avanzada">
+                    <i data-lucide="cpu"></i> <span>Google Gemini 1.5</span>
+                </div>
+                <div class="tech-item" title="Base de Datos en Tiempo Real">
+                    <i data-lucide="database"></i> <span>Supabase</span>
+                </div>
+                <div class="tech-item" title="Automatización de Flujos">
+                    <i data-lucide="workflow"></i> <span>n8n Workflow</span>
+                </div>
+                <div class="tech-item" title="Encriptación de Datos">
+                    <i data-lucide="shield-check"></i> <span>Seguridad SSL</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem vs Solution (Neuro: Contrast Principle) -->
+    <section class="section-contrast">
+        <div class="container">
+            <h2 class="section-title text-center">Del Caos Administrativo al Control Total</h2>
+            <div class="comparison-grid">
+                <!-- The Old Way -->
+                <div class="card glass contrast-bad fade-in">
+                    <div class="card-header-status red">
+                        <i data-lucide="x-circle"></i> Tu Actualidad
+                    </div>
+                    <div class="chaos-visual">
+                        <div class="file-icon"><i data-lucide="file-spreadsheet"></i> Lunes.csv</div>
+                        <div class="file-icon"><i data-lucide="file-spreadsheet"></i> Nomina_v2.xlsx</div>
+                        <div class="file-icon"><i data-lucide="file-warning"></i> Reporte_FINAL.xlsx</div>
+                    </div>
+                    <h3>Ceguera Operativa</h3>
+                    <ul>
+                        <li><i data-lucide="x"></i> Datos desactualizados (ayer vs hoy).</li>
+                        <li><i data-lucide="x"></i> Errores manuales en nómina.</li>
+                        <li><i data-lucide="x"></i> Decisiones basadas en intuición, no en datos.</li>
+                    </ul>
+                </div>
+
+                <!-- The New Way -->
+                <div class="card glass contrast-good fade-in delay-200">
+                    <div class="card-header-status green">
+                        <i data-lucide="check-circle"></i> Tu Futuro
+                    </div>
+                    <div class="clarity-visual">
+                        <div class="stat-row">
+                            <span>Eficiencia Natalia G.</span>
+                            <span class="badge-success">102%</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>Incentivo Actual</span>
+                            <span class="text-green">$ 45.200 COP</span>
+                        </div>
+                    </div>
+                    <h3>Claridad Absoluta</h3>
+                    <ul>
+                        <li><i data-lucide="check"></i> Respuestas en tiempo real (Telegram).</li>
+                        <li><i data-lucide="check"></i> Cálculo exacto de salario a destajo.</li>
+                        <li><i data-lucide="check"></i> Detección proactiva de tiempos muertos.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Bento Grid -->
+    <section class="section-bento" id="features">
+        <div class="container">
+            <h2 class="section-title text-center">Inteligencia Industrial<br><span class="text-cyan">Motorizada por n8n + Supabase</span></h2>
+            
+            <div class="bento-grid">
+                <!-- Large Feature -->
+                <div class="bento-card span-2 glass hover-glow">
+                    <div class="icon-wrap cyan"><i data-lucide="brain-circuit"></i></div>
+                    <h3>Análisis SAM Instantáneo</h3>
+                    <p>El algoritmo aprende tus Minutos Estándar Permitidos por lote y detecta desviaciones. Si una operaria baja del 80%, recibes una alerta antes del medio día.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bento-card glass hover-glow">
+                    <div class="icon-wrap green"><i data-lucide="coins"></i></div>
+                    <h3>Nómina e Incentivos</h3>
+                    <p>Calcula liquidaciones al centavo basadas en productividad real. Evita disputas laborales.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bento-card glass hover-glow">
+                    <div class="icon-wrap orange"><i data-lucide="siren"></i></div>
+                    <h3>Detector de Fugas NaN</h3>
+                    <p>Identifica "Not a Number" o vacíos en tus registros que representan dinero perdido.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bento-card span-2 glass hover-glow row-reverse">
+                    <div class="text-content">
+                        <h3>Nativo de Telegram</h3>
+                        <p>Olvídate de instalar software complejo o capacitar personal. Si saben usar WhatsApp, saben usar nuestro Supervisor IA.</p>
+                    </div>
+                    <div class="visual-content">
+                        <i data-lucide="message-circle" size="64" class="text-cyan"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section-steps" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title text-center">Integración en 3 Pasos Simples</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h3>Arrastra</h3>
+                    <p>Sube tus archivos de producción diaria (Excel/CSV) al chat seguro.</p>
+                </div>
+                <div class="connector"></div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h3>Procesa</h3>
+                    <p>Nuestro motor n8n limpia los datos y los estructura en Supabase.</p>
+                </div>
+                <div class="connector"></div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h3>Consulta</h3>
+                    <p>Pregunta "¿Quién fue más eficiente hoy?" y recibe la respuesta al instante.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI / Social Proof / Colombian Context -->
+    <section class="section-roi" id="roi">
+        <div class="container text-center">
+            <div class="roi-box glass">
+                <h2>¿Cuánto te cuesta NO tenerlo?</h2>
+                <div class="roi-grid">
+                    <div class="roi-item">
+                        <span class="roi-label">Analista de Datos Jr.</span>
+                        <span class="roi-value text-red">~$ 2.500.000 COP/mes</span>
+                        <span class="roi-sub">+ Prestaciones Sociales</span>
+                    </div>
+                    <div class="vs-circle">VS</div>
+                    <div class="roi-item">
+                        <span class="roi-label">Supervisor IA</span>
+                        <span class="roi-value text-green">Inversión Mínima</span>
+                        <span class="roi-sub">Menos de una hora de SMLMV al día</span>
+                    </div>
+                </div>
+                <p class="roi-disclaimer">
+                    *Estimación basada en salarios promedio del sector textil en Colombia (2025).
+                </p>
+                <button class="btn btn-primary trigger-modal mt-4">Calcular mi ahorro</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Use Cases Section -->
+    <section class="section-use-cases" id="use-cases">
+        <div class="container">
+            <h2 class="section-title text-center">Escenarios de Aplicación</h2>
+            <p class="section-subtitle text-center text-muted">Diseñado para resolver problemas reales de la industria textil colombiana</p>
+            
+            <div class="use-cases-grid">
+                <div class="use-case-card glass">
+                    <div class="use-case-icon">
+                        <i data-lucide="factory"></i>
+                    </div>
+                    <h3>Fábricas de Confección</h3>
+                    <p>Monitorea la eficiencia de cada módulo de producción. Detecta cuellos de botella antes de que afecten las entregas.</p>
+                    <ul class="use-case-features">
+                        <li><i data-lucide="check"></i> Control de SAM por operación</li>
+                        <li><i data-lucide="check"></i> Alertas de bajo rendimiento</li>
+                        <li><i data-lucide="check"></i> Cálculo de incentivos</li>
+                    </ul>
+                </div>
+                
+                <div class="use-case-card glass">
+                    <div class="use-case-icon">
+                        <i data-lucide="scissors"></i>
+                    </div>
+                    <h3>Talleres de Corte</h3>
+                    <p>Optimiza el uso de tela por lote. Calcula desperdicios y productividad de cortadores en tiempo real.</p>
+                    <ul class="use-case-features">
+                        <li><i data-lucide="check"></i> Eficiencia de tendido</li>
+                        <li><i data-lucide="check"></i> Control de desperdicio</li>
+                        <li><i data-lucide="check"></i> Productividad individual</li>
+                    </ul>
+                </div>
+                
+                <div class="use-case-card glass">
+                    <div class="use-case-icon">
+                        <i data-lucide="package-check"></i>
+                    </div>
+                    <h3>Control de Calidad</h3>
+                    <p>Rastrea defectos por operario, por lote o por cliente. Identifica patrones de error antes de que lleguen al cliente final.</p>
+                    <ul class="use-case-features">
+                        <li><i data-lucide="check"></i> Trazabilidad de defectos</li>
+                        <li><i data-lucide="check"></i> Reportes por operario</li>
+                        <li><i data-lucide="check"></i> Tendencias de calidad</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (Transparency & Trust) -->
+    <section class="section-faq" id="faq">
+        <div class="container">
+            <h2 class="section-title text-center">Preguntas Frecuentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item glass">
+                    <div class="faq-question">
+                        <h3>¿Mis datos de nómina están seguros?</h3>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutamente. Utilizamos Supabase con políticas de seguridad a nivel de fila (RLS). Tus archivos se procesan en un entorno encriptado y <strong>nunca se comparten</strong> con terceros ni se usan para entrenar modelos públicos de IA.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass">
+                    <div class="faq-question">
+                        <h3>¿Qué pasa si mis archivos de Excel están desordenados?</h3>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>El agente utiliza Gemini 1.5 Flash para interpretar estructuras variables. Sin embargo, para garantizar un 100% de precisión en nómina, proporcionamos una <strong>plantilla base simplificada</strong> que estandariza tu proceso en menos de 1 semana.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item glass">
+                    <div class="faq-question">
+                        <h3>¿Necesito instalar software en los computadores de la fábrica?</h3>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No. Todo funciona a través de <strong>Telegram</strong>, que ya está instalado en la mayoría de celulares. Esto elimina costos de licencias de software, servidores locales o mantenimiento de TI.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item glass">
+                    <div class="faq-question">
+                        <h3>¿Cómo se calcula el SAM (Standard Allowed Minutes)?</h3>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>El sistema toma tus registros históricos o cronometrajes cargados para establecer una línea base. Luego, compara el desempeño en tiempo real contra estos estándares industriales para calcular la eficiencia porcentual.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="text-muted text-sm">¿Tienes una duda técnica específica? <a href="#" class="text-cyan trigger-modal">Habla con un ingeniero</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <!-- Contact Section -->
+            <div class="footer-contact-section">
+                <h2 class="text-center">¿Listo para transformar tu fábrica?</h2>
+                <p class="text-center text-muted">Múltiples canales de atención para tu comodidad</p>
+                
+                <div class="contact-channels">
+                    <a href="https://wa.me/573001234567" target="_blank" class="contact-card glass">
+                        <div class="contact-icon whatsapp">
+                            <i data-lucide="message-circle"></i>
+                        </div>
+                        <h4>WhatsApp</h4>
+                        <p>+57 300 123 4567</p>
+                        <span class="contact-status online">Respuesta inmediata</span>
+                    </a>
+                    
+                    <a href="mailto:soporte@prodai.co" class="contact-card glass">
+                        <div class="contact-icon email">
+                            <i data-lucide="mail"></i>
+                        </div>
+                        <h4>Email</h4>
+                        <p>soporte@prodai.co</p>
+                        <span class="contact-status">Respuesta en 24h</span>
+                    </a>
+                    
+                    <a href="https://t.me/prodai_bot" target="_blank" class="contact-card glass">
+                        <div class="contact-icon telegram">
+                            <i data-lucide="send"></i>
+                        </div>
+                        <h4>Telegram</h4>
+                        <p>@prodai_bot</p>
+                        <span class="contact-status online">Bot activo 24/7</span>
+                    </a>
+                </div>
+                
+                <div class="business-hours glass">
+                    <i data-lucide="clock"></i>
+                    <div>
+                        <strong>Horario de Atención Humana:</strong>
+                        <span>Lunes a Viernes, 8:00 AM - 6:00 PM (Hora Colombia GMT-5)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="footer-divider">
+            
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i data-lucide="bot" class="text-cyan"></i>
+                        <span>Prod<span class="text-cyan">AI</span> Supervisor</span>
+                    </div>
+                    <p>Tecnología textil de vanguardia para Colombia.</p>
+                    <div class="footer-badges">
+                        <div class="badge-item" title="Cifrado SSL/TLS">
+                            <i data-lucide="shield-check"></i>
+                            <span>SSL Secure</span>
+                        </div>
+                        <div class="badge-item colombia" title="Desarrollado en Colombia">
+                            <span class="flag">🇨🇴</span>
+                            <span>Hecho en Colombia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Navegación</h4>
+                    <a href="#features">Funcionalidades</a>
+                    <a href="#use-cases">Casos de Uso</a>
+                    <a href="#roi">Rentabilidad</a>
+                    <a href="#how-it-works">Cómo Funciona</a>
+                    <a href="#faq">Preguntas Frecuentes</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal Colombia</h4>
+                    <a href="politica-privacidad.html" class="legal-link">Política de Privacidad</a>
+                    <a href="terminos-condiciones.html" class="legal-link">Términos y Condiciones</a>
+                    <a href="politica-privacidad.html#habeas-data" class="legal-link">Habeas Data (Ley 1581)</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Ubicación</h4>
+                    <p><i data-lucide="map-pin" class="icon-sm"></i> Bogotá, D.C., Colombia</p>
+                    <p><i data-lucide="mail" class="icon-sm"></i> soporte@prodai.co</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center copyright">
+            <p>&copy; 2026 ProdAI Supervisor. Todos los derechos reservados.</p>
+            <p class="copyright-sub">Protegido por las leyes de propiedad intelectual de Colombia (Ley 23 de 1982)</p>
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Volver arriba">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <!-- Lead Generation Modal -->
+    <div id="lead-modal" class="modal-overlay">
+        <div class="modal-content glass">
+            <button class="close-modal"><i data-lucide="x"></i></button>
+            <h2>Prioriza tu Producción</h2>
+            <p>Cupos limitados para el programa piloto de Enero 2026. Recibe una demo personalizada.</p>
+            
+            <form id="lead-form" class="lead-form">
+                <div class="form-group">
+                    <label for="name">Nombre Completo</label>
+                    <input type="text" id="name" required placeholder="Ej: Juan Pérez">
+                </div>
+                <div class="form-group">
+                    <label for="company">Fábrica / Empresa</label>
+                    <input type="text" id="company" required placeholder="Ej: Textiles de Oriente S.A.S.">
+                </div>
+                <div class="form-group">
+                    <label for="whatsapp">WhatsApp (Colombia)</label>
+                    <input type="tel" id="whatsapp" required placeholder="300 123 4567">
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">Acepto la <a href="politica-privacidad.html" target="_blank">política de tratamiento de datos</a> y los <a href="terminos-condiciones.html" target="_blank">términos y condiciones</a> conforme a la Ley 1581 de 2012.</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-full">Solicitar Acceso</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
